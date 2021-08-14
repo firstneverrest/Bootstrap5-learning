@@ -40,6 +40,54 @@ Bootstrap 5 is the most famous CSS framework. Find more information in the [offi
 1. CSS and JS Files - when you want to work offline
 2. Source files - when you want to config Bootstrap5
 3. Build Tools - npm
+```
+npm install bootstrap
+```
+
+## Bootstrap 5 Icons
+Put this CDN below the Bootstrap CSS CDN to use Bootstrap 5 icons 
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" />
+```
+
+## Reboot
+Bootstrap 5 uses Reboot which is a collection of element-specific CSS changes in a single file. Therefore, it helps create simple baseline to style CSS. Reboot has core features as following:
+1.  use `rem` instead of `em`
+2.  avoid `margin-top`
+3.  `inherit` when possible
+4.  Native `sans-serif` fonts
+5.  body background `#fff`
+6.  box sizing: `border-box`
+
+## Customization
+To customize some CSS properties, you need to use `npm install bootstrap` to get all files (Bootstrap CDN cannot be customized).
+1. Install bootstrap with npm
+2. Create sass/main.scss at the root
+3. In main.scss, import bootstrap.scss to gain every styles from bootstrap
+4. Then, you can start customize by overriding  
+    ```scss
+    // custom variables
+    $primary: #ffcb3b;
+
+    // import the functions & variables
+
+    // import bootstrap
+    @import '../node_modules/bootstrap/scss/bootstrap.scss';
+    ```
+5. Install "Live Sass Compiler" in vscode extension -> open settings -> type "live sass format" -> Click "Edit in settings.json" -> edit as following:
+
+    ```json
+    "liveSassCompile.settings.formats": [
+          {
+              "format": "compressed",
+              "extensionName": ".min.css",
+              "savePath": "/css"
+          }
+      ]
+    ```
+6. Open main.scss and click "Watch Sass" at the bottom of vscode
+7. It will create the css with two css files
+8. Link `main.min.css` file in HTML
 
 ## Resources
 - [slides from Bootstrap5 LinkedIn Learning course](https://raybo.org/slides_bootstrap5/)
